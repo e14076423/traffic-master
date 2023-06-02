@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../static/src/icon.jpg" />
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <script src="../static/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>公共運輸資訊整合系統</title>
+  </head>
+  <body>
+    <header>
+      <h2>公共運輸資訊整合系統</h2>
+      <nav>
+        <ul>
+          <li>
+            <a class="active" href="{{ url_for('index') }}"
+              ><img class="pic main" src="../static/src/main.png" /> 首頁</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('bus') }}"
+              ><img class="pic bus" src="../static/src/公車.png" />
+              公車時刻表</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('train') }}"
+              ><img class="pic train" src="../static/src/火車.jfif" />
+              火車時刻表</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('bike') }}"
+              ><img class="pic bike" src="../static/src/自行車.jpeg" />
+              自行車租借</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('like') }}"
+              ><img class="pic contact" src="../static/src/like.jpg" />
+              我的最愛</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('database') }}"
+              ><img class="pic database" src="../static/src/database.png" />
+              資料庫</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div
+      style="
+        display: flex;
+        margin-top: 5%;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+      "
+    >
+      <img src="../static/src/demo.png" alt="demo" style="width: 50%" />
+      <br />
+    </div>
+  </body>
+  <footer>
+    <p>
+      資料庫系統期末專案 Database System Final Project - 我管交通的啦 Traffic
+      Master
+    </p>
+    <p>第14組 - 組員</p>
+    <ul>
+      <li>R76111044 張宇晴</li>
+      <li>R76111052 陳于名</li>
+      <li>H54084010 陳冠言</li>
+      <li>H24081333 林家同</li>
+      <li>E14076423 許茗洋</li>
+    </ul>
+  </footer>
+</html>

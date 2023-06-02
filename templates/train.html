@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../static/src/icon.jpg" />
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <script src="../static/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>公共運輸資訊整合系統-火車系統</title>
+  </head>
+  <script>
+    function show() {
+      document.getElementById("bus_table").style.display = "block";
+    }
+  </script>
+  <body>
+    <script>
+      window.onload = function () {
+        getTrain();
+      };
+    </script>
+    <header>
+      <h2>火車系統</h2>
+      <nav>
+        <ul>
+          <li>
+            <a class="active" href="{{ url_for('index') }}"
+              ><img class="pic main" src="../static/src/main.png" /> 首頁</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('bus') }}"
+              ><img class="pic bus" src="../static/src/公車.png" />
+              公車時刻表</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('train') }}"
+              ><img class="pic train" src="../static/src/火車.jfif" />
+              火車時刻表</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('bike') }}"
+              ><img class="pic bike" src="../static/src/自行車.jpeg" />
+              自行車租借</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('like') }}"
+              ><img class="pic contact" src="../static/src/like.jpg" />
+              我的最愛</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('database') }}"
+              ><img class="pic database" src="../static/src/database.png" />
+              資料庫</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div
+      style="
+        display: flex;
+        margin-top: 5%;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+      "
+    >
+      <select id="train-time-select">
+        <option>請選擇時間</option>
+        <option value="00:00:00">00:00</option>
+        <option value="01:00:00">01:00</option>
+        <option value="02:00:00">02:00</option>
+        <option value="03:00:00">03:00</option>
+        <option value="04:00:00">04:00</option>
+        <option value="05:00:00">05:00</option>
+        <option value="06:00:00">06:00</option>
+        <option value="07:00:00">07:00</option>
+        <option value="08:00:00">08:00</option>
+        <option value="09:00:00">09:00</option>
+        <option value="10:00:00">10:00</option>
+        <option value="11:00:00">11:00</option>
+        <option value="12:00:00">12:00</option>
+        <option value="13:00:00">13:00</option>
+        <option value="14:00:00">14:00</option>
+        <option value="15:00:00">15:00</option>
+        <option value="16:00:00">16:00</option>
+        <option value="17:00:00">17:00</option>
+        <option value="18:00:00">18:00</option>
+        <option value="19:00:00">19:00</option>
+        <option value="20:00:00">20:00</option>
+        <option value="21:00:00">21:00</option>
+        <option value="22:00:00">22:00</option>
+        <option value="23:00:00">23:00</option>
+        <option value="24:00:00">24:00</option>
+      </select>
+      <select id="train-station-start">
+        <option>請選擇起點</option>
+      </select>
+      <select id="train-station-destination">
+        <option>請選擇訖點</option>
+      </select>
+      <button type="submit" class="btn" onclick="searchTrain()">確認</button>
+      <br />
+    </div>
+    <div
+      style="
+        display: flex;
+        margin-top: 2rem;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+      "
+    >
+      <table>
+        <thead>
+          <tr>
+            <th>車次</th>
+            <th>起點</th>
+            <th>訖點</th>
+            <th>出發時間</th>
+            <th>抵達時間</th>
+            <th>行駛時間</th>
+            <th>新增最愛</th>
+          </tr>
+        </thead>
+        <tbody id="train-time-table"></tbody>
+      </table>
+    </div>
+    <img
+      src="../static/src/train_demo.png"
+      alt="bus_table"
+      id="bus_table"
+      style="left: 10%; width: 80%; display: none; position: absolute; top: 35%"
+    />
+  </body>
+  <footer>
+    <p>
+      資料庫系統期末專案 Database System Final Project - 我管交通的啦 Traffic
+      Master
+    </p>
+    <p>第14組 - 組員</p>
+    <ul>
+      <li>R76111044 張宇晴</li>
+      <li>R76111052 陳于名</li>
+      <li>H54084010 陳冠言</li>
+      <li>H24081333 林家同</li>
+      <li>E14076423 許茗洋</li>
+    </ul>
+  </footer>
+</html>

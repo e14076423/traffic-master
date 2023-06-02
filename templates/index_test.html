@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <script src="../static/script.js"></script>
+    <title>Database Final Project Team14</title>
+  </head>
+  <body>
+    <h1>Database Final Project Team14</h1>
+
+    <p id="boom">Boom button</p>
+    <button onclick="boom()">Boom!</button>
+
+    <p id="test">Backend test button</p>
+    <button onclick="test()">Test</button>
+
+    <div id="table-insertion" style="border: solid; margin: 2px; padding: 2px">
+      <p>Table insertion</p>
+      <form>
+        <label for="testID">testID</label>
+        <input id="testID" name="testID" placeholder="testID" />
+        <br />
+        <label for="testCONTENT">testCONTENT</label>
+        <input id="testCONTENT" placeholder="testCONTENT" />
+      </form>
+      <button onclick="dbInsert()">Insert</button>
+    </div>
+    <p>Database content</p>
+    <button onclick="dbTest()">Get DB Content</button>
+    <hr />
+    <div id="database-content">here shows the content of database</div>
+  </body>
+</html>
