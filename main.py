@@ -24,7 +24,7 @@ try:
     mydb = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="0000",
+        password="",
         database="DATABASE_FINAL_PROJECT"
     )
     # initiate the db
@@ -527,4 +527,4 @@ def db_test_insert():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080,  debug=True)
+    app.run(host='0.0.0.0', port=80)
